@@ -71,6 +71,7 @@
     <Build Include="dbo\spRooms_GetAvailableRooms.sql" />
     <Build Include="dbo\spBookings_Insert.sql" />
     <Build Include="dbo\spBookings_Search.sql" />
+    <Build Include="dbo\spBookings_CheckIn.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />

@@ -9,6 +9,6 @@ begin
     set nocount on;
 
     insert into dbo.Bookings(RoomId, GuestId, StartDate, EndDate, TotalCost)
-    values (@roomId, @guestId, @startDate, @endDate, @totalCost)
+    values (@roomId, @guestId, @startDate, @endDate, @totalCost);
 end
     

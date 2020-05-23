@@ -15,5 +15,5 @@ begin
         or (b.StartDate <= @endDate and @endDate < b.EndDate)
         or (b.StartDate <= @startDate and @startDate < b.EndDate)
     )
-    group by t.Id, t.Title, t.Description, t.Price
+    group by t.Id, t.Title, t.Description, t.Price;
 end
