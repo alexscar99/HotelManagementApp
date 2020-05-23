@@ -8,7 +8,7 @@ using System.Text;
 
 namespace HotelAppLibrary.Data
 {
-    public class SqlData
+    public class SqlData : IDatabaseData
     {
         private readonly ISqlDataAccess _db;
         private const string connectionStringName = "SqlDb";
@@ -50,9 +50,9 @@ namespace HotelAppLibrary.Data
 
             // Save booking by inserting into 'Bookings' table
             _db.SaveData("dbo.spBookings_Insert",
-                         new 
-                         { 
-                             roomId = availableRooms.First().Id, 
+                         new
+                         {
+                             roomId = availableRooms.First().Id,
                              guestId = guest.Id,
                              startDate,
                              endDate,
