@@ -4,48 +4,48 @@
     ViewData["Title"] = "Room Search";
 }
 
-    <div class="container">
-        <h1>Room Search</h1>
-        <form method="post">
-            <div class="row">
-                <div class="form-group col-md-4 mr-3">
-                    <label asp-for="@Model.StartDate">Start Date</label>
-                    <input type="date" class="form-control" asp-for="@Model.StartDate">
-                </div>
-                <div class="form-group col-md-4 ml-3">
-                    <label asp-for="@Model.EndDate">End Date</label>
-                    <input type="date" class="form-control" asp-for="@Model.EndDate">
-                </div>
+<div class="container">
+    <h1>Room Search</h1>
+    <form method="post">
+        <div class="row">
+            <div class="form-group col-md-4 mr-3">
+                <label asp-for="@Model.StartDate">Start Date</label>
+                <input type="date" class="form-control" asp-for="@Model.StartDate">
             </div>
+            <div class="form-group col-md-4 ml-3">
+                <label asp-for="@Model.EndDate">End Date</label>
+                <input type="date" class="form-control" asp-for="@Model.EndDate">
+            </div>
+        </div>
 
-            <button type="submit" class="btn btn-primary mt-3 mb-3">Search</button>
-        </form>
+        <button type="submit" class="btn btn-primary mt-3 mb-3">Search</button>
+    </form>
 
-        @if (Model.AvailableRoomTypes?.Count > 0)
-        {
-            <h2 class="mt-4 mb-4">Available Rooms:</h2>
-            <table class="table">
-                <thead>
+    @if (Model.AvailableRoomTypes?.Count > 0)
+    {
+        <h2 class="mt-4 mb-4">Available Rooms:</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Room Type</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var room in Model.AvailableRoomTypes)
+                {
                     <tr>
-                        <th>Room Type</th>
-                        <th>Price</th>
-                        <th></th>
+                        <td>
+                            <strong>@room.Title</strong>
+                            <br />
+                            @room.Description
+                        </td>
+                        <td>@string.Format("{0:C}", room.Price)</td>
+                        <td><a href="">Book Now</a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var room in Model.AvailableRoomTypes)
-                    {
-                        <tr>
-                            <td>
-                                <strong>@room.Title</strong>
-                                <br />
-                                @room.Description
-                            </td>
-                            <td>@string.Format("{0:C}", room.Price)</td>
-                            <td><a href="">Book Now</a></td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        }
-    </div>
+                }
+            </tbody>
+        </table>
+    }
+</div>
