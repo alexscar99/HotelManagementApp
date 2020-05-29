@@ -43,7 +43,12 @@ namespace HotelApp.Web.Pages
 
         public IActionResult OnPost()
         {
-            return RedirectToPage(new { SearchEnabled = true, StartDate, EndDate });
+            return RedirectToPage(new 
+            { 
+                SearchEnabled = true,
+                StartDate = StartDate.ToString("yyyy-MM-dd"),
+                EndDate = EndDate.ToString("yyyy-MM-dd")
+            });
         }
     }
 }
