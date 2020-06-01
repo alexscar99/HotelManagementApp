@@ -23,7 +23,7 @@
 
     @if (Model.AvailableRoomTypes?.Count > 0)
     {
-        <h2 class="mt-4 mb-4">Available Rooms:</h2>
+        <h2 class="mt-4 mb-4">Available Room Types:</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -42,7 +42,13 @@
                             @room.Description
                         </td>
                         <td>@string.Format("{0:C}", room.Price)</td>
-                        <td><a href="">Book Now</a></td>
+                        <td>
+                            <a asp-page="/BookRoom" asp-route-roomtypeid="@room.Id" 
+                               asp-route-startdate="@Model.StartDate.ToShortDateString()" 
+                               asp-route-enddate="@Model.EndDate.ToShortDateString()">
+                                Book Now
+                            </a>
+                        </td>
                     </tr>
                 }
             </tbody>
