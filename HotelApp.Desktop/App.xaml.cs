@@ -23,7 +23,7 @@ namespace HotelApp.Desktop
             base.OnStartup(e);
 
             var services = new ServiceCollection();
-            services.AddTransient<MainWindow>();
+            services.AddTransient<SearchBookings>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IDatabaseData, SqlData>();
 
@@ -36,7 +36,7 @@ namespace HotelApp.Desktop
             services.AddSingleton(config);
 
             var serviceProvider = services.BuildServiceProvider();
-            var mainWindow = serviceProvider.GetService<MainWindow>();
+            var mainWindow = serviceProvider.GetService<SearchBookings>();
 
             mainWindow.Show();
         }
