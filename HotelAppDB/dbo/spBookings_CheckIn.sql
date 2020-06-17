@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spBookings_CheckInGuest]
+﻿CREATE PROCEDURE [dbo].[spBookings_CheckIn]
     @Id int
 AS
 begin
