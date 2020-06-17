@@ -56,8 +56,9 @@
                             <TextBlock Text="{Binding LastName}" Margin="5" />
                         </StackPanel>
                         
-                        <Button Margin="5" Padding="10" Grid.Row="0" Grid.Column="1"
-                                Grid.RowSpan="4" VerticalAlignment="Center">
+                        <Button x:Name="checkIn" Margin="5" Padding="10" Grid.Row="0" Grid.Column="1"
+                                Grid.RowSpan="4" VerticalAlignment="Center" Tag="{Binding Id}"
+                                Click="CheckIn_Click">
                             Check In
                         </Button>
 
